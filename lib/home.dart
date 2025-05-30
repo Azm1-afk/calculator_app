@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/build_button.dart';
+import 'widgets/num_button.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -8,7 +8,27 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     // TextEditingController inputControl = TextEditingController();
 
+    final List<String> buttons = [
+      '7',
+      '8',
+      '9',
+      '/',
+      '4',
+      '5',
+      '6',
+      '*',
+      '1',
+      '2',
+      '3',
+      '-',
+      '0',
+      '.',
+      '=',
+      '+',
+    ];
+
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text('Calculator'),
         backgroundColor: Colors.grey[200],
@@ -34,15 +54,17 @@ class Home extends StatelessWidget {
             ),
           ),
 
-          SizedBox(
-            child: NumButton(
-              text: '1',
-              textColor: Colors.red,
-              backGroundColor: Colors.black12,
-              borderColor: Colors.green,
+          SizedBox(height: 20),
+
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 4,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              padding: const EdgeInsets.all(16.0),
+              children: buttons.map((value) => NumButton(text: value)).toList(),
             ),
           ),
-
         ],
       ),
     );

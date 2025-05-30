@@ -1,17 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class NumButton extends StatelessWidget {
-  final Color textColor;
-  final Color backGroundColor;
-  final Color borderColor;
   final String text;
 
   const NumButton({
     Key? key,
     required this.text,
-    required this.textColor,
-    required this.backGroundColor,
-    required this.borderColor,
   }) : super(key: key);
 
   @override
@@ -19,17 +13,17 @@ class NumButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: backGroundColor,
-        border: Border.all(color: borderColor),
+        color: Colors.blue[100],
+        border: Border.all(color: Colors.black),
         borderRadius: BorderRadius.circular(12),
       ),
-      width: 50,
-      height: 50,
+      width: 80,
+      height: 80,
       child: Center(
         child: Text(
           text,
           style: TextStyle(
-            color: textColor,
+            color: Colors.black,
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
